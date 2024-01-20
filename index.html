@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Selector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Agent Selector</h1>
+
+    <div id="agentImages">
+        <img src="images/iso.png" alt="iso" onclick="playVideo('iso')" width="100" height="100">
+        <img src="images/sage.png" alt="sage" onclick="playVideo('sage')" width="100" height="100">
+        <img src="images/jett.png" alt="jett" onclick="playVideo('jett')" width="100" height="100">
+        <img src="images/astra.png" alt="astra" onclick="playVideo('astra')" width="100" height="100">
+        <img src="images/phoenix.png" alt="phoenix" onclick="playVideo('phoenix')" width="100" height="100">
+        <img src="images/killjoy.png" alt="killjoy" onclick="playVideo('killjoy')" width="100" height="100">
+        <img src="images/raze.png" alt="raze" onclick="playVideo('raze')" width="100" height="100">
+        <img src="images/breach.png" alt="breach" onclick="playVideo('breach')" width="100" height="100"><br>
+        <img src="images/brimstone.png" alt="brimstone" onclick="playVideo('brimstone')" width="100" height="100">
+        <img src="images/chamber.png" alt="chamber" onclick="playVideo('chamber')" width="100" height="100">
+        <img src="images/cypher.png" alt="cypher" onclick="playVideo('cypher')" width="100" height="100">
+        <img src="images/fade.png" alt="fade" onclick="playVideo('fade')" width="100" height="100">
+        <img src="images/geko.png" alt="geko" onclick="playVideo('geko')" width="100" height="100">
+        <img src="images/kayo.png" alt="kayo" onclick="playVideo('kayo')" width="100" height="100">
+        <img src="images/omen.png" alt="omen" onclick="playVideo('omen')" width="100" height="100">
+        <img src="images/reyna.png" alt="reyna" onclick="playVideo('reyna')" width="100" height="100"><br>
+        <img src="images/sky.png" alt="sky" onclick="playVideo('sky')" width="100" height="100">
+        <img src="images/sova.png" alt="sova" onclick="playVideo('sova')" width="100" height="100">
+        <img src="images/viper.png" alt="viper" onclick="playVideo('viper')" width="100" height="100">
+        <img src="images/yoru.png" alt="yoru" onclick="playVideo('yoru')" width="100" height="100">
+        <img src="images/deadlock.png" alt="deadlock" onclick="playVideo('deadlock')" width="100" height="100">
+        <img src="images/harbor.png" alt="harbor" onclick="playVideo('harbor')" width="100" height="100">
+        <img src="images/neon.png" alt="neon" onclick="playVideo('neon')" width="100" height="100">
+    </div>
+
+    <div id="videoContainer" style="display: none;">
+        <video id="selectedVideo" controls width="400" loop>
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function playVideo(agent) {
+            var videoContainer = document.getElementById("videoContainer");
+            var selectedVideo = document.getElementById("selectedVideo");
+
+            // Reset the video source
+            selectedVideo.src = '';
+
+            if (agent) {
+                var videoSource = "video/" + agent + ".mp4";
+
+                // Set the video source and display it
+                selectedVideo.src = videoSource;
+                videoContainer.style.display = "block";
+            } else {
+                // Hide the video container if no agents are selected
+                videoContainer.style.display = "none";
+            }
+
+            // Play the video (optional)
+            selectedVideo.play();
+        }
+    </script>
+
+</body>
+</html>
