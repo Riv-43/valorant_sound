@@ -17,12 +17,75 @@ h1 {
     color: #fff;
 }
 
-#agentImages img {
+.agentImages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.agentImages img {
     width: 100px;
     height: 100px;
     border-radius: 15%;
     border: 2px solid red;
-    margin: 5px; /* Add margin for spacing between images */
+    margin: 5px;
+    transition: transform 0.5s;
+}
+
+#videoContainer {
+    display: none;
+}
+
+#videoContainer video {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.agentImages img:hover {
+    transform: scale(1.1);
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#agentImages img:hover + .layer,
+.layer:hover {
+    height: 100%;
 }
 
 form {
